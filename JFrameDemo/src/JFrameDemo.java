@@ -40,11 +40,13 @@ public class JFrameDemo extends JFrame implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		if(e.getActionCommand().equalsIgnoreCase("Login"))
-			JOptionPane.showMessageDialog(null, "FAIL AUTHENTICATION");
+		if(e.getActionCommand().equalsIgnoreCase("Login")) {
+			Authentication.validate(jtxUsername.getText(), jpwPassword.getText());
+			//JOptionPane.showMessageDialog(null, "FAIL AUTHENTICATION");
+		}
 		else if(e.getActionCommand().equalsIgnoreCase("Reset")) {
-			jtxUsername.setText("");
-			jpwPassword.setText("");
+			jtxUsername.setText("clear");
+			jpwPassword.setText("clear");
 		}
 			
 	}
